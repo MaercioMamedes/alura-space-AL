@@ -9,8 +9,8 @@
             <img class="imagem__imagem" src="{{ object.image.url }}">
             <div class="imagem__info">
                 <div class="imagem__texto">
-                    <p class="imagem__titulo">{{ object.title }}</p>
-                    <p class="imagem__descricao">12 de julho de 2022</p>
+                    <p class="imagem__titulo">{{ object.title }} - {{ object.image_source }}</p>
+                    <p class="imagem__descricao">{{ object.date_image }}</p>
                     <p class="imagem__texto">{{ object.description }}</p>
                 </div>
             </div>

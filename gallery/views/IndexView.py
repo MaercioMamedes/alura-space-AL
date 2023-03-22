@@ -8,6 +8,6 @@ class IndexView(TemplateView):
     def get_context_data(self, **kwargs):
         
         context = super().get_context_data(**kwargs)
-        context['objects'] = AstronomicalObject.objects.all()
+        context['objects'] = AstronomicalObject.objects.filter(published=True)
         
         return context
