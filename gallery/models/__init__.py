@@ -1,1 +1,1 @@
-from .ObjectAstronomic import *
+from .AstronomicalObject import *

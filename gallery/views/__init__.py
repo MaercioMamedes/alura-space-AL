@@ -1,2 +1,2 @@
 from .IndexView import *
-from .ObjectAtronomicView import *
+from .AstronomicalObjectView import *

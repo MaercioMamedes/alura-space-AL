@@ -1,10 +1,10 @@
 from django.urls import path
-from gallery.views import IndexView, ObjectAtronomicView
+from gallery.views import IndexView, AstronomicalObjectView
 
 
 app_name = 'gallery'
 urlpatterns =[
     path('', IndexView.as_view(), name='index'),
-    path('object', ObjectAtronomicView.as_view(), name='object_astronomic'),
+    path('object', AstronomicalObjectView.as_view(), name='object_astronomic'),
 
 ]
