@@ -41,7 +41,10 @@ class UserRegisterForm(forms.Form):
 
     email = forms.EmailField(
         label='Email',
-        max_length=150
+        max_length=150,
+        widget=forms.EmailInput(
+            attrs={'class':'form-control'}
+        )
     )
 
     password = forms.CharField(
