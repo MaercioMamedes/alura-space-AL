@@ -38,6 +38,12 @@ body {
     background-position: center;
     background-size: cover;
 }
+
+h1.title-page {
+    color:#FFFFFF;
+    text-align: center;
+}
+
 ol, ul {
     list-style: none;
 }
