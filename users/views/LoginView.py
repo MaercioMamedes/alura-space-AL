@@ -3,6 +3,7 @@ from users.forms import LoginForm
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.contrib import auth
+from django.contrib import messages
 
 
 
@@ -25,13 +26,16 @@ class LoginView(FormView):
 
             user = auth.authenticate(username=username, password=password)
 
-            if user:
+            if user is not None:
                 auth.login(request, user)
 
-            print(username, password)
+            
 
-            return redirect('gallery:index')
+                messages.success(request, f'{user} logado com sucesso')
+                return redirect('gallery:index')
         
-        return HttpResponse('passou')
+            else:
+                messages.error(request, 'Usuário ou senhas inválidos')
+                return redirect('users:login')
     
     
