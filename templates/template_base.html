@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static '/styles/style.css' %}">
-    
+
 </head>
 
 <body>
@@ -23,27 +23,32 @@
             <img src="{% static '/assets/logo/Logo(2).png' %}" alt="Logo da Alura Space" />
             <div class="cabecalho__busca">
                 <div class="busca__fundo">
-                    <input class="busca__input" type="text" placeholder="O que você procura?">
-                    <img class="busca__icone" src="{% static '/assets/ícones/1x/search.png' %}" alt="ícone de search">
+                    <form action="{% url 'gallery:search' %}" class="form-search" method="post">{% csrf_token %}
+                        <input class="busca__input" name="search"type="text" placeholder="O que você procura?">
+                        <button class="btn-search" type="submit">
+                            <img class="busca__icone" src="{% static '/assets/ícones/1x/search.png' %}"
+                                alt="ícone de search">
+                        </button>
+                    </form>
                 </div>
             </div>
         </header>
         {% if messages %}
         {% for message in messages %}
-            <div class="alert alert-{{message.tags}}" role="alert">
-                {{ message }}
-            </div>
+        <div class="alert alert-{{message.tags}}" role="alert">
+            {{ message }}
+        </div>
         {% endfor %}
         {% endif %}
         <h1 class="title-page">{{ title_page }}</h1>
         <main class="principal">
 
-        
-        {% include 'partials/_menu.html' %}
 
-        {% block content %}
+            {% include 'partials/_menu.html' %}
 
-        {% endblock %}
+            {% block content %}
+
+            {% endblock %}
 
 
         </main>
