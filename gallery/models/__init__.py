@@ -1,1 +1,1 @@
-from .AstronomicalObject import *
+from .Astrophotography import *

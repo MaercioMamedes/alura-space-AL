@@ -28,7 +28,7 @@
                     {% for object in objects %}
 
                         <li class="card">
-                            <a href="{% url 'gallery:astronomical_object' object.id %}">
+                            <a href="{% url 'gallery:astrophotography' object.id %}">
                                 <img class="card__imagem" src="{{ object.image.url }}"
                                     alt="foto">
                             </a>

@@ -1,10 +1,10 @@
 from django.views.generic.detail import DetailView
-from gallery.models import AstronomicalObject
+from gallery.models import Astrophotography
 
 
-class AstronomicalObjectView(DetailView):
+class AstrophotographyView(DetailView):
     template_name = 'gallery/imagem.html'
-    model = AstronomicalObject
+    model = Astrophotography
 
     def get_context_data(self, **kwargs):
         return super().get_context_data(**kwargs)

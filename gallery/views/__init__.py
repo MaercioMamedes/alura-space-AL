@@ -1,3 +1,3 @@
 from .IndexView import *
-from .AstronomicalObjectView import *
-from .AtronomicalObjectSearchView import *
+from .AstrophotographyView import *
+from .AstrophotographySearchView import *

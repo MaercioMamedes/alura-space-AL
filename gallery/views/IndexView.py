@@ -1,5 +1,5 @@
 from django.views.generic.base import TemplateView
-from gallery.models import AstronomicalObject
+from gallery.models import Astrophotography
 
 
 class IndexView(TemplateView):
@@ -8,6 +8,6 @@ class IndexView(TemplateView):
     def get_context_data(self, **kwargs):
         
         context = super().get_context_data(**kwargs)
-        context['objects'] = AstronomicalObject.objects.filter(published=True)
+        context['objects'] = Astrophotography.objects.filter(published=True)
         
         return context

@@ -1,8 +1,8 @@
 from django.contrib import admin
-from gallery.models import AstronomicalObject
+from gallery.models import Astrophotography
 # Register your models here.
 
 
-@admin.register(AstronomicalObject)
+@admin.register(Astrophotography)
 class ObjectAtronomic(admin.ModelAdmin):
     pass

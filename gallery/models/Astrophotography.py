@@ -1,14 +1,14 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
-class AstronomicalObject(models.Model):
+class Astrophotography(models.Model):
     categories = (
         ('Galáxia', 'Galáxia'),
         ('Aglomerado', 'Aglomerado'),
         ('Estrela', 'Estrela'),
         ('Nebulosa', 'Nebulosa'),
         ('Planeta', 'Planeta'),
-        ('Outros','Outros'),
     )
 
     title = models.CharField('Título', max_length=500)
@@ -18,6 +18,7 @@ class AstronomicalObject(models.Model):
     image = models.ImageField('Foto', upload_to='pictures/%Y/%m/%d', blank=True)
     category = models.CharField('Categoria', choices=categories, max_length=20, default='Outros')
     published = models.BooleanField('Publicado', default=False)
+    registered_by = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
 
     def __str__(self) -> str:
         return self.title
