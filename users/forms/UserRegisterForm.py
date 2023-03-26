@@ -1,4 +1,5 @@
 from django import forms
+from users.helpers import Validation
 
 
 class UserRegisterForm(forms.Form):
@@ -14,8 +15,6 @@ class UserRegisterForm(forms.Form):
         )
 
     )
-
-
 
     last_name = forms.CharField(
         label='Último nome',
@@ -62,3 +61,21 @@ class UserRegisterForm(forms.Form):
         ),
         required=True
     )
+
+    def clean(self):
+        cleaned_data = super().clean()
+        first_name = cleaned_data.get('first_name')
+        last_name = cleaned_data.get('last_name')
+        username = cleaned_data.get('username')
+        password = cleaned_data.get('password')
+        password_confirm = cleaned_data.get('password_confirm')
+
+        errors_list = {}
+
+        Validation.field_is_alphanumeric(self, first_name, field_name='first_name')
+        Validation.field_is_alphanumeric(self, last_name, field_name='last_name')
+        Validation.username_exist(self, username)
+        Validation.password_validate(self, password, password_confirm)
+
+    
+    

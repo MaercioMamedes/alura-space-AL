@@ -20,7 +20,7 @@ A motivação para desenvolvimento desse projeto é a preparação para o [Chall
 ### Etapas do projeto
 * :heavy_check_mark: Definir modelos e relacionamentos
 * :heavy_check_mark: criar view e rota para index
-* :x: criar view e rota para cadastro de usuário
+* :heavy_check_mark: criar view e rota para cadastro de usuário
 * :x: criar validação de formulário de cadastro de usuário
 * :x: criar view e rota para atualização de usuário
 * :x: criar view e rota para exclusão de usuário

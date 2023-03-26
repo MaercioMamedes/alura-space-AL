@@ -15,16 +15,22 @@
                 {{ field }}
             </div>
             {% for error in field.errors %}
-            <div class="alert alert-danger">
+            <div class="alert alert-danger" style=" height: 70%;">
                 {{error}}
             </div>
             {% endfor %}
-            {% endfor %}
+            {% endfor %}            
         </div>
         <div>
             <button type="submit" class="btn btn-success col-12" style="padding: top 5px;">Cadastrar</button>
         </div>
     </form>
+
+    <input type="hidden" name="" id="erro" value="{{ form.errors.email }}">    
+    <script  type="text/javascript">
+        let erro = document.getElementById("erro").value;
+        console.log(JSON.parse(erro));
+    </script>
 </section>
 
 {% endblock %}
