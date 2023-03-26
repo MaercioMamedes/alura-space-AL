@@ -21,14 +21,14 @@ A motivação para desenvolvimento desse projeto é a preparação para o [Chall
 * :heavy_check_mark: Definir modelos e relacionamentos
 * :heavy_check_mark: criar view e rota para index
 * :heavy_check_mark: criar view e rota para cadastro de usuário
-* :x: criar validação de formulário de cadastro de usuário
+* :heavy_check_mark: criar validação de formulário de cadastro de usuário
 * :x: criar view e rota para atualização de usuário
 * :x: criar view e rota para exclusão de usuário
-* :x: criar view e rota para para Login de usuário
+* :heavy_check_mark: criar view e rota para para Login de usuário
 * :x: criar view e rota para cadastro de astrofotografia
-* :x: criar view e rota para para vizualizar astrofotografia
+* :heavy_check_mark: criar view e rota para para vizualizar astrofotografia
 * :x: criar view e rota para para vizualizar astrofotografia cadastrada pelo usuário da sessão
 * :x: criar view e rota para atualização de astrofotografia
 * :x: criar view e rota para exclusão de astrofotografia
-* :x: criar view e rota para buscar astrofotografia cadastrada
+* :heavy_check_mark: criar view e rota para buscar astrofotografia cadastrada
 * :x: criar view e rota para filtrar astrofotografia por categoria

@@ -10,12 +10,11 @@ class Astrophotography(models.Model):
         ('Nebulosa', 'Nebulosa'),
         ('Planeta', 'Planeta'),
     )
-
-    title = models.CharField('Título', max_length=500)
+    image = models.ImageField('Foto', upload_to='pictures/%Y/%m/%d', blank=True)
     image_source = models.CharField('Fonte', max_length=50, default='')
+    title = models.CharField('Título', max_length=500)
     date_image = models.DateField('Data da Imagem', default='2000-01-01')
     description = models.TextField('Descrição')
-    image = models.ImageField('Foto', upload_to='pictures/%Y/%m/%d', blank=True)
     category = models.CharField('Categoria', choices=categories, max_length=20, default='Outros')
     published = models.BooleanField('Publicado', default=False)
     registered_by = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
