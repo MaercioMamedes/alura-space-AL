@@ -25,7 +25,7 @@ A motivação para desenvolvimento desse projeto é a preparação para o [Chall
 * :x: criar view e rota para atualização de usuário
 * :x: criar view e rota para exclusão de usuário
 * :heavy_check_mark: criar view e rota para para Login de usuário
-* :x: criar view e rota para cadastro de astrofotografia
+* :heavy_check_mark: criar view e rota para cadastro de astrofotografia
 * :heavy_check_mark: criar view e rota para para vizualizar astrofotografia
 * :x: criar view e rota para para vizualizar astrofotografia cadastrada pelo usuário da sessão
 * :x: criar view e rota para atualização de astrofotografia

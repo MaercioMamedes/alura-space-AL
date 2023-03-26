@@ -46,3 +46,6 @@ class AstrophotographyRegisterForm(forms.ModelForm):
             ),
         
         }
+
+    def clean(self):
+        return super().clean()
