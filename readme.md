@@ -1,5 +1,5 @@
 # Projeto Alura-Space-AL 
-## Um CRUD escrito em na linguagem Python utilizando o framework Django
+## Um CRUD escrito na linguagem Python utilizando o framework Django
 
 Alura-Space-AL é uma aplicação fullstack, desenvolvida em Python com o Framework Django. Suas funcionalidades estão baseadas
 numa galeria virtual, de Astrofotografias, que podem ser cadastradas pelos usuários, sendo um ponto de compartilhamento
