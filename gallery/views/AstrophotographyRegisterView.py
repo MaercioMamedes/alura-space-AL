@@ -8,9 +8,7 @@ class AstrophotographyRegisterView(FormView):
     form_class = AstrophotographyRegisterForm
     template_name = 'gallery/astrophotagray_register.html'
 
-
     def get_context_data(self, **kwargs):
-
         context = super().get_context_data(**kwargs)
         return context
 
@@ -19,11 +17,9 @@ class AstrophotographyRegisterView(FormView):
         form = AstrophotographyRegisterForm(self.request.POST, self.request.FILES)
 
         if form.is_valid():
-            
             astro_image = form.save(commit=False)
             astro_image.published = True
             astro_image.registered_by = user
             astro_image.save()
 
         return redirect('gallery:index')
-    
