@@ -70,6 +70,13 @@ WSGI_APPLICATION = "setup.wsgi.application"
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase.db',
+    }
+}
+
+"""DATABASES = {
+    'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'aluraSpace',
         'USER': 'postgres',
@@ -77,7 +84,7 @@ DATABASES = {
         'HOST': 'localhost',
     }
 }
-
+"""
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

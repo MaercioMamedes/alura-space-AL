@@ -35,7 +35,7 @@ Back-End do zero.
 * :white_check_mark: criar view e rota para index
 * :white_check_mark: criar view e rota para cadastro de usuário
 * :white_check_mark: criar validação de formulário de cadastro de usuário
-* :x: criar view e rota para atualização de usuário
+* :hourglass: criar view e rota para atualização de usuário
 * :x: criar view e rota para exclusão de usuário
 * :white_check_mark: criar view e rota para para Login de usuário
 * :white_check_mark: criar view e rota para cadastro de astrofotografia
