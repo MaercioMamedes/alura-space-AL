@@ -28,8 +28,8 @@ class MySeleniumTests(StaticLiveServerTestCase):
 
     def test_login(self):
         self.selenium.get('%s%s' % (self.live_server_url, '/users/login'))
-        self._findByName("username").send_keys("teste")
-        self._findByName("password").send_keys("1234")
+        self._sendKeysByName("username", "teste")
+        self._sendKeysByName("password", "1234")
 
         self._findByXpath("/html/body/div/main/section[2]/section/form/div[2]/button").click()
 
@@ -38,8 +38,8 @@ class MySeleniumTests(StaticLiveServerTestCase):
     def test_invalid_login(self):
         self.selenium.get('%s%s' % (self.live_server_url, '/users/login'))
         
-        self._findByName("username").send_keys("invalid_username")
-        self._findByName("password").send_keys("invalid_password")
+        self._sendKeysByName("username", "invalid_username")
+        self._sendKeysByName("password", "invalid_password")
 
         self._findByXpath("/html/body/div/main/section[2]/section/form/div[2]/button").click()
 
@@ -48,12 +48,12 @@ class MySeleniumTests(StaticLiveServerTestCase):
     def test_register(self):
         self.selenium.get('%s%s' % (self.live_server_url, '/users/register'))
 
-        self._findById("id_first_name").send_keys("Jhon")
-        self._findById("id_last_name").send_keys("Due")
-        self._findById("id_username").send_keys("jhon_due")
-        self._findById("id_email").send_keys("jhon_due@gmail.com")
-        self._findById("id_password").send_keys("~çsiA1203#%&1")
-        self._findById("id_password_confirm").send_keys("~çsiA1203#%&1")
+        self._sendKeysById("id_first_name", "Jhon")
+        self._sendKeysById("id_last_name", "Due")
+        self._sendKeysById("id_username", "jhon_due")
+        self._sendKeysById("id_email", "jhon_due@gmail.com")
+        self._sendKeysById("id_password", "~çsiA1203#%&1")
+        self._sendKeysById("id_password_confirm", "~çsiA1203#%&1")
 
         self._findBySelector("body > div > main > section.galeria > form > div:nth-child(3) > button").click()
 
@@ -69,6 +69,12 @@ class MySeleniumTests(StaticLiveServerTestCase):
         self._findByXpath('//a[@href="/users/logout"]').click()
 
         self.assertEqual(self._findByXpath("/html/body/div/div").text, "logout realizado com sucesso")
+
+    def _sendKeysByName(self, element: str, value: str):
+        return self._findByName(element).send_keys(value)
+
+    def _sendKeysById(self, element: str, value: str):
+        return self._findById(element).send_keys(value)
 
     def _findById(self, element: str):
         return self._findElementBy(By.ID, element)
