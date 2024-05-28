@@ -62,8 +62,8 @@ class MySeleniumTests(StaticLiveServerTestCase):
     def test_logout(self):
         self.selenium.get('%s%s' % (self.live_server_url, '/users/login'))
         
-        self._findByName("username").send_keys("teste")
-        self._findByName("password").send_keys("1234")
+        self._sendKeysByName("username", "teste")
+        self._sendKeysByName("password", "1234")
 
         self._findByXpath("/html/body/div/main/section[2]/section/form/div[2]/button").click()
         self._findByXpath('//a[@href="/users/logout"]').click()
