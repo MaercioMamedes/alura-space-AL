@@ -1,4 +1,5 @@
 import socket
+import time
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium.webdriver.common.by import By
 from selenium import webdriver
@@ -22,7 +23,8 @@ class MySeleniumTests(StaticLiveServerTestCase):
     def setUpClass(cls):
         super().setUpClass()
         cls.host = socket.gethostbyname(socket.gethostname())
-        cls.selenium = webdriver.Remote(command_executor='http://localhost:4444/wd/hub', options=webdriver.ChromeOptions())
+        time.sleep(1)
+        cls.selenium = webdriver.Remote(command_executor='http://selenium:4444/wd/hub', options=webdriver.ChromeOptions())
 
     @classmethod
     def tearDownClass(cls):
