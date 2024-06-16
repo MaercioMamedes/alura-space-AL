@@ -1,10 +1,14 @@
+import socket
+import time
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.webdriver import WebDriver
+from selenium import webdriver
 from django.contrib.auth.models import User
-import time
+from django.test import override_settings, tag
 
+@override_settings(ALLOWED_HOSTS=['*'])
 class MySeleniumTests(StaticLiveServerTestCase):
+    host = '0.0.0.0'
 
     def setUp(self):
         user = User.objects.create_user(
@@ -18,8 +22,9 @@ class MySeleniumTests(StaticLiveServerTestCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.selenium = WebDriver()
-        # cls.selenium.implicitly_wait(10)
+        cls.host = socket.gethostbyname(socket.gethostname())
+        time.sleep(1)
+        cls.selenium = webdriver.Remote(command_executor='http://selenium:4444/wd/hub', options=webdriver.ChromeOptions())
 
     @classmethod
     def tearDownClass(cls):
